@@ -561,7 +561,7 @@
   },"80": {
     "doc": "Publishing Pipeline",
     "title": "Publishing Pipeline",
-    "content": " ",
+    "content": ". A data publisher publishes its data in the Flanders Smart Data Space as a Linked Data Event Stream (LDES). In order to do so, a publishing pipeline needs to be configured. Without going too deeply into the specific configuration of the necessary building blocks, this part assists you in how this publishing pipeline needs to look like. After this, you can go directly to the tutorials, with the basic concepts and background knowledge in your back pocket. ",
     "url": "/publisher/index",
     
     "relUrl": "/publisher/index"
@@ -832,118 +832,174 @@
     
     "relUrl": "/consumer/adapters/rdf-adapter#notes"
   },"119": {
+    "doc": "Examples consuming Pipeline",
+    "title": "Examples consuming pipelines",
+    "content": "This sections provides an overview of how data consumer can replicate data to different backend systems. ",
+    "url": "/consumer/examples#examples-consuming-pipelines",
+    
+    "relUrl": "/consumer/examples#examples-consuming-pipelines"
+  },"120": {
+    "doc": "Examples consuming Pipeline",
+    "title": "Triple stores",
+    "content": ". A vivid illustration of a consumption pipeline involves the process of harvesting members from a Linked Data Event Stream (LDES) and subsequently storing them in a triplestore. Once stored, these data points can be efficiently queried and analyzed using SPARQL queries. This pipeline not only showcases the seamless integration of data into a structured repository but also highlights the ease with which users can access and manipulate this information, thereby unlocking a wealth of insights and opportunities for exploration. You can find more information in this article . ",
+    "url": "/consumer/examples#triple-stores",
+    
+    "relUrl": "/consumer/examples#triple-stores"
+  },"121": {
+    "doc": "Examples consuming Pipeline",
+    "title": "PostgreSQL &amp; TimescaleDB",
+    "content": ". You can find more information in this article . ",
+    "url": "/consumer/examples#postgresql--timescaledb",
+    
+    "relUrl": "/consumer/examples#postgresql--timescaledb"
+  },"122": {
+    "doc": "Examples consuming Pipeline",
+    "title": "PowerBI",
+    "content": ". You can find more information in this article . ",
+    "url": "/consumer/examples#powerbi",
+    
+    "relUrl": "/consumer/examples#powerbi"
+  },"123": {
+    "doc": "Examples consuming Pipeline",
+    "title": "GeoServer",
+    "content": ". You can find more information in this article . ",
+    "url": "/consumer/examples#geoserver",
+    
+    "relUrl": "/consumer/examples#geoserver"
+  },"124": {
+    "doc": "Examples consuming Pipeline",
+    "title": "LDES to QGIS",
+    "content": ". You can find more information in this article . ",
+    "url": "/consumer/examples#ldes-to-qgis",
+    
+    "relUrl": "/consumer/examples#ldes-to-qgis"
+  },"125": {
+    "doc": "Examples consuming Pipeline",
+    "title": "Machine Learning (ML-LDES server)",
+    "content": ". In this Github repo, you will find a docker file with the configuration of PostgreSQL and Apache NiFi. A data flow is configured in Apache NiFi to convert these data streams into PostgreSQL. You will find an Apache NiFi configuration file containing the necessary data flow. This Apache NiFi data flow works also for storing LDES members in a PostgreSQL database. | Install Python requirements via: pip install -r requirements.txt . | Install Docker . | Make sure port 8433, 8001 and 5432 are accessible . | Create a local docker-compose.yml file with the following good-to-go configuration . | Run docker-compose up --build . | import a data flow in Apache NiFi (localhost:8443) via this configuration file . | Assign and LDES endpoint in the LDES client . | Go to PgAdmin to access your TimescaleDB database (localhost:8002/) . | Create a database in TimescaleDB . | Start the Apache NiFi data flow . | LDES members will be stored one by one in your TimescaleDB . | . Go to github repo for more info about ML-LDES server prototype . You can find more information in this and this article . ",
+    "url": "/consumer/examples#machine-learning-ml-ldes-server",
+    
+    "relUrl": "/consumer/examples#machine-learning-ml-ldes-server"
+  },"126": {
+    "doc": "Examples consuming Pipeline",
+    "title": "Examples consuming Pipeline",
+    "content": " ",
+    "url": "/consumer/examples",
+    
+    "relUrl": "/consumer/examples"
+  },"127": {
     "doc": "Consuming pipeline",
     "title": "Consuming Pipeline",
-    "content": ". A data consumer in the world of Linked Data Event Streams (LDES) plays a key role in copying and keeping data up-to-date. Data consumers are crucial in bringing constant streams of LDES into their systems. This requires setting up a system that not only gets the data but also makes sure it stays synchronized with any new information. ",
+    "content": ". As a data consumer, you want to access and utilize data from the Flanders Smart Data Space. This data is offered in the form of Linked Data Event Streams. This section aims to guide you through the process of creating the perfect consumption pipeline, providing a broad overview without delving into the complexities of each pipeline component. Armed with this foundational knowledge, you can seamlessly transition to the tutorials, ready to apply the essential concepts and background information to your data consumption tasks. ",
     "url": "/consumer/index#consuming-pipeline",
     
     "relUrl": "/consumer/index#consuming-pipeline"
-  },"120": {
+  },"128": {
     "doc": "Consuming pipeline",
     "title": "Consuming pipeline",
     "content": " ",
     "url": "/consumer/index",
     
     "relUrl": "/consumer/index"
-  },"121": {
+  },"129": {
     "doc": "1. Input components",
     "title": "Input components",
     "content": "The input components are components that will receive data (not necessarily) to then feed the LDI pipeline. ",
     "url": "/consumer/inputs/index#input-components",
     
     "relUrl": "/consumer/inputs/index#input-components"
-  },"122": {
+  },"130": {
     "doc": "1. Input components",
     "title": "1. Input components",
     "content": " ",
     "url": "/consumer/inputs/index",
     
     "relUrl": "/consumer/inputs/index"
-  },"123": {
+  },"131": {
     "doc": "LDES Client with Connector",
     "title": "LDIO Ldes Client Connector",
     "content": "LDIO connector name: Ldio:LdioLdesClientConnector see reference guide Apache Nifi Component Name: Ldio:LdioLdesClientConnector` see reference guide . This component adds EDC (Eclipse dataspace Connector) support to the ldio ldes client. If you’d like to know how to configure the LDES Client, we refer to the ldio ldes client. The additional functionality provided by this component makes it possible to use the Ldes Client to consume an LDES through an EDC connector. This component exposes two endpoints: . | http://://transfer The Ldio component will start the data transfer with the connector. You have to send the transfer request to the LdioLdesClientConnector instead of the EDC consumer connector. The LDIO Ldes Client Connector will start the transfer with the connector and also keep the transfer alive while consuming the LDES (e.g. request a new token when it expires). | http://://token This endpoint should never be called directly. This is the callback to be provided in the transfer request. The EDC connector will use this callback endpoint to provide the LDES Client with a token. | . ",
     "url": "/consumer/inputs/ldes-client-connector#ldio-ldes-client-connector",
     
     "relUrl": "/consumer/inputs/ldes-client-connector#ldio-ldes-client-connector"
-  },"124": {
+  },"132": {
     "doc": "LDES Client with Connector",
     "title": "LDES Client with Connector",
     "content": " ",
     "url": "/consumer/inputs/ldes-client-connector",
     
     "relUrl": "/consumer/inputs/ldes-client-connector"
-  },"125": {
+  },"133": {
     "doc": "LDES Client",
     "title": "LDES Client",
     "content": "LDIO Component Name: Ldio:LdioLdesClient see reference guide Apache Nifi Component Name: Ldio:LdioLdesClient see reference guide . The LDES Client stands as a critical component of the pipeline, arguably the most pivotal. The LDES Client is responsible for consuming members from an existing LDES, subsequently facilitating their smooth progression through the LDIO. The LDES Client contains the functionality to replicate and synchronize an LDES, and to persist its state for that process. More information on the functionalites can be found here. This is achieved by configuring the processor with an initial fragment URL. When the processor is triggered, the fragment will be processed, and all relations will be added to the (non-persisted) queue.A queue that accepts new fragments to process is maintained as long as the processor runs. The processor also keeps track of the mutable and immutable fragments already processed. It will be ignored when an attempt is made to queue a known immutable fragment. Fragments in the mutable fragment store will be queued when they’re expired. Should a fragment be processed from a stream that does not set the max-age in the Cache-control header, a default expiration interval will be used to set an expiration date on the fragment. Processed members of mutable fragments are also kept in state. They are ignored if presented more than once. Within a fragment, members can be ordered based on a timestamp. The path to this timestamp has to be configured. If this path is missing, the members are ordered randomly. graph LR L[LDES] --&gt; H[LDES Client] H --&gt; S[...] S --&gt; Q[...] subgraph LD input Pipeline H S end . The LDES CLIENT is designed for replication and synchronisation, meaning the client can retrieve members of an LDES but also checks regularly if new members are added and fetch them, allowing data consumers to stay up to date with the dataset. To understand the functioning of an LDES client, it is important to understand how LDESes are published on the Web. The Linked Data Fragments principle is utilised for publishing an LDES, meaning that the data is published in one or more fragments and meaningful semantic links are created between these fragments. This approach facilitates clients to follow these links and discover additional data. However, the critical aspect for the LDES client is the notion of mutable and immutable fragments. When publishing an LDES stream, a common configuration is to have a maximum number of members per fragment. Once a fragment surpasses this limit, it is regarded as immutable, and a ‘Cache-control: immutable’ cache header is added to the fragment to signify this. This information is crucial for the LDES client since it only needs to retrieve an immutable fragment once, while mutable fragments must be regularly polled to identify new members. ",
     "url": "/consumer/inputs/ldes-client",
     
     "relUrl": "/consumer/inputs/ldes-client"
-  },"126": {
+  },"134": {
     "doc": "LDES Client",
     "title": "Linked Data Interactions",
     "content": "The LDES client component is written in Java and available as an SDK in the Linked Data Interactions repository. More information about Linked Data Interactions can be found here. The LDES Client contains the functionality to replicate and synchornise an LDES, and to persist its state for that process. More information on the functionalites can be found here. This is achieved by configuring the processor with an initial fragment URL. When the processor is triggered, the fragment will be processed, and all relations will be added to the (non-persisted) queue. As long as the processor runs, a queue that accepts new fragments to process is maintained. The processor also keeps track of the mutable and immutable fragments already processed. It will be ignored when an attempt is made to queue a known immutable fragment. Fragments in the mutable fragment store will be queued when they’re expired. Should a fragment be processed from a stream that does not set the max-age in the Cache-control header, a default expiration interval will be used to set an expiration date on the fragment. Processed members of mutable fragments are also kept in state. They are ignored if presented more than once. Within a fragment, members can be ordered based on a timestamp. The path to this timestamp has to be configured. If this path is missing, the members are ordered randomly. ",
     "url": "/consumer/inputs/ldes-client#linked-data-interactions",
     
     "relUrl": "/consumer/inputs/ldes-client#linked-data-interactions"
-  },"127": {
+  },"135": {
     "doc": "5. LDES structure Discoverer",
     "title": "LDES structure Discoverer",
     "content": "A lightweight application that discovers the structure of an LDES or a view by retrieving all the tree node relations of that LDES or view. A use case for this could be when you are only interested in a part of the event stream. To know what part you can follow, the structure can be discovered first. ",
     "url": "/consumer/ldes-discoverer#ldes-structure-discoverer",
     
     "relUrl": "/consumer/ldes-discoverer#ldes-structure-discoverer"
-  },"128": {
+  },"136": {
     "doc": "5. LDES structure Discoverer",
     "title": "Config",
     "content": "| Property | Description | Required | Default | Example | Supported values | . | url | Url where from the discoverer needs to start | Yes | N/A | http://example.com/my-api | HTTP and HTTPS url | . | source-format | The ‘Content-Type’ that should be requested to the server. | No | application/n-quads | text/turtle | Any type supported by Apache Jena | . | output-format | The RDF format that will be used to display all the found relations | No | text/turtle | application/ld+json | Any type supported by Apache Jena | . ",
     "url": "/consumer/ldes-discoverer#config",
     
     "relUrl": "/consumer/ldes-discoverer#config"
-  },"129": {
+  },"137": {
     "doc": "5. LDES structure Discoverer",
     "title": "How to run",
     "content": "This tutorial will show how to use the discoverer in Docker. In this example, we will try to discover the structure of an event stream of Geomobility. For simplicity, we recommend passing the config as arguments, like shown below: . docker run ldes/ldes-discoverer --url=\"http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11\" . NOTE: when an url contains a &amp; symbol, which will be picked up by the shell as an operator. In this example, if the url was not wrapped in quotation marks, the shell will try to execute three different command, where the last two will be month=05 and day=11, which will fail of course. To resolve this, make sure the url is encapsulated in quotation marks. Example output . In the logging of the application, both the total number of relations and the relations itself will be displayed. This will be present as the last logging statement of the app and would look something like this: . 2024-02-08T14:26:25.279+01:00 INFO 48176 --- [ main] b.v.i.l.l.d.common.LdesDiscoverer : Total of 97 relations found for url http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11 @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt; . &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=3&gt; tree:relation [ rdf:type tree:Relation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=4&gt; ] . &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=2&gt; tree:relation [ rdf:type tree:Relation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=3&gt; ] . &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&gt; tree:relation [ rdf:type tree:InBetweenRelation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=00&gt;; tree:path prov:generatedAtTime; tree:value \"2023-05-11T00\" ]; tree:relation [ rdf:type tree:InBetweenRelation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&gt;; tree:path prov:generatedAtTime; tree:value \"2023-05-11T05\" ]; [...] tree:relation [ rdf:type tree:InBetweenRelation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=20&gt;; tree:path prov:generatedAtTime; tree:value \"2023-05-11T20\" ] . [...] &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&gt; tree:relation [ rdf:type tree:Relation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=1&gt; ] . ",
     "url": "/consumer/ldes-discoverer#how-to-run",
     
     "relUrl": "/consumer/ldes-discoverer#how-to-run"
-  },"130": {
+  },"138": {
     "doc": "5. LDES structure Discoverer",
     "title": "5. LDES structure Discoverer",
     "content": " ",
     "url": "/consumer/ldes-discoverer",
     
     "relUrl": "/consumer/ldes-discoverer"
-  },"131": {
+  },"139": {
     "doc": "4. Output components",
     "title": "Linked Data Interactions Outputs",
     "content": "The LDI Output is a component that will take in Linked Data and will export it to external sources. ",
     "url": "/consumer/outputs/index#linked-data-interactions-outputs",
     
     "relUrl": "/consumer/outputs/index#linked-data-interactions-outputs"
-  },"132": {
+  },"140": {
     "doc": "4. Output components",
     "title": "4. Output components",
     "content": " ",
     "url": "/consumer/outputs/index",
     
     "relUrl": "/consumer/outputs/index"
-  },"133": {
+  },"141": {
     "doc": "3. Transformer components",
     "title": "Linked Data Interactions Transformers",
     "content": "The LDI Transformer is a component that takes in a Linked Data model, transforms/modifies it and then puts it back on the pipeline. ",
     "url": "/consumer/transformers/index#linked-data-interactions-transformers",
     
     "relUrl": "/consumer/transformers/index#linked-data-interactions-transformers"
-  },"134": {
+  },"142": {
     "doc": "3. Transformer components",
     "title": "3. Transformer components",
     "content": " ",
     "url": "/consumer/transformers/index",
     
     "relUrl": "/consumer/transformers/index"
-  },"135": {
+  },"143": {
     "doc": "Intermediary Pipeline",
     "title": "Intermediary Pipeline",
     "content": ". A data intermediary, particularly one specialized in working with Linked Data Event Streams (LDES), plays a pivotal role in the data space ecosystem. These intermediaries act as the connective tissue between data publishers and consumers, focusing on the acquisition, enhancement, and redistribution of data streams. Their work with LDES involves not just the simple relaying of data from one point to another but adding substantial value to the data. This can include cleaning and restructuring data, enriching it with additional context or information from other sources, and ensuring the data is modeled and published in a way that adheres to Linked Data principles. This ensures that the data is not only more useful and insightful for end-users but also interoperable within the broader web of data. The ultimate goal of a data intermediary working with LDES is to facilitate a seamless, efficient, and enriching flow of data across different sectors and users. By doing so, they help unlock the full potential of Linked Data for businesses, researchers, and public entities, making data more accessible, understandable, and actionable. As a data intermediary, your objective is to collect LDES streams and then release a revamped, enriched LDES data stream. The capability to utilize data processing techniques for cleaning, restructuring, or augmenting the initial datasets requires the establishment of a specialized LDES consumption pipeline. Your role involves implementing a resilient and scalable pipeline that not only facilitates an uninterrupted data flow but also aligns with Linked Data principles, thereby transforming your enhanced LDES stream into a crucial resource within the data ecosystem. ",
