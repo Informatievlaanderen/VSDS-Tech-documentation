@@ -594,426 +594,433 @@
     
     "relUrl": "/publisher/inputs/amqp-in"
   },"85": {
-    "doc": "Archive File In",
-    "title": "Archive file in",
-    "content": "LDIO Component Name: Ldio:LdioArchiveFileIn see reference guide Apache Nifi Component Name: ArchiveFileIn see Apache Nifi reference guide . The LDIO Archive File In is used to read models from files and feed them to the pipeline. Please refer to the core documentation for more information. graph LR L[archive-root-dir] --&gt; H[LDIO In] H --&gt; S[LDES server] subgraph Publishing Pipeline H end . This component traverses all directories in the archive in lexical order and reads the members in lexical order as well. Example expected structure: . | archive . | 2022 . | 01 . | 01 . | member-1.nq | member-2.nq | … | . | 02 . | member-122.nq | … | . | . | . | . | . ",
-    "url": "/publisher/inputs/archive-file-in#archive-file-in",
-    
-    "relUrl": "/publisher/inputs/archive-file-in#archive-file-in"
-  },"86": {
-    "doc": "Archive File In",
-    "title": "Archive File In",
-    "content": " ",
-    "url": "/publisher/inputs/archive-file-in",
-    
-    "relUrl": "/publisher/inputs/archive-file-in"
-  },"87": {
-    "doc": "HTTP In Poller",
-    "title": "LDIO HTTP In Poller",
-    "content": "LDIO Component Name: Ldio:LdioHttpInPollersee reference guide Apache Nifi Component Name: InvokeHTTP see reference guide . The LDIO HTTP In Poller is a basic HTTP Poller that will poll a target URL on a specified interval. This component fetches data from an HTTP endpoint at a configured interval. It is designed to process input in various content types, including XML (text/xml, application/xml), JSON (application/json), and RDF (text/turtle, application/ld+json, application/n-quads, application/n-triples, application/rdf+xml). The expected output of the component is in these same formats, supporting XML, JSON, and RDF content types. graph LR L[HTTP endpoint] --&gt; H[HTTP poller component] H --&gt; S[...] subgraph Publishing Pipeline H end . ",
-    "url": "/publisher/inputs/http-in-poller#ldio-http-in-poller",
-    
-    "relUrl": "/publisher/inputs/http-in-poller#ldio-http-in-poller"
-  },"88": {
     "doc": "HTTP In Poller",
     "title": "HTTP In Poller",
-    "content": " ",
+    "content": "LDIO Component Name: Ldio:LdioHttpInPollersee reference guide . Apache Nifi Component Name: InvokeHTTP see reference guide . The LDIO HTTP In Poller is a basic HTTP Poller that will poll a target URL on a specified interval. This component fetches data from an HTTP endpoint at a configured interval. It is designed to process input in various content types, including XML (text/xml, application/xml), JSON (application/json), and RDF (text/turtle, application/ld+json, application/n-quads, application/n-triples, application/rdf+xml). The expected output of the component is in these same formats, supporting XML, JSON, and RDF content types. graph LR L[HTTP endpoint] --&gt; H[HTTP poller component] H --&gt; S[...] subgraph Publishing Pipeline H end . ",
     "url": "/publisher/inputs/http-in-poller",
     
     "relUrl": "/publisher/inputs/http-in-poller"
-  },"89": {
-    "doc": "HTTP In",
-    "title": "LDIO HTTP In",
-    "content": "LDIO Component Name: Ldio:LdioHttpIn see reference guide Apache Nifi Component Name: InvokeHTTP see Apache Nifi reference guide . The LDIO HTTP In is a basic HTTP Listener. This component listens for HTTP messages at the endpoint http://{hostname}:{port}/{pipeline name}. It supports processing input in various content types, including XML (text/xml, application/xml), JSON (application/json), and RDF (text/turtle, application/ld+json, application/n-quads, application/n-triples, application/rdf+xml). The expected output of this component is also in similar formats, supporting XML, JSON, and RDF content types. graph LR L[endpoint HTTP messages] --&gt; H[Http in Listener] H --&gt; S[...] subgraph Publishing Pipeline H end . ",
-    "url": "/publisher/inputs/http-in#ldio-http-in",
-    
-    "relUrl": "/publisher/inputs/http-in#ldio-http-in"
-  },"90": {
+  },"86": {
     "doc": "HTTP In",
     "title": "HTTP In",
-    "content": " ",
+    "content": "LDIO Component Name: Ldio:LdioHttpIn see reference guide . Apache Nifi Component Name: InvokeHTTP see Apache Nifi reference guide . The LDIO HTTP In is a basic HTTP Listener. This component listens for HTTP messages at the endpoint http://{hostname}:{port}/{pipeline name}. It supports processing input in various content types, including XML (text/xml, application/xml), JSON (application/json), and RDF (text/turtle, application/ld+json, application/n-quads, application/n-triples, application/rdf+xml). The expected output of this component is also in similar formats, supporting XML, JSON, and RDF content types. graph LR L[endpoint HTTP messages] --&gt; H[Http in Listener] H --&gt; S[...] subgraph Publishing Pipeline H end . ",
     "url": "/publisher/inputs/http-in",
     
     "relUrl": "/publisher/inputs/http-in"
-  },"91": {
+  },"87": {
     "doc": "1. Input components",
     "title": "Input components",
     "content": "The Input components are components that will receive data (not necessarily LD) to then feed the publishing pipeline. ",
     "url": "/publisher/inputs/index#input-components",
     
     "relUrl": "/publisher/inputs/index#input-components"
-  },"92": {
+  },"88": {
     "doc": "1. Input components",
     "title": "1. Input components",
     "content": " ",
     "url": "/publisher/inputs/index",
     
     "relUrl": "/publisher/inputs/index"
-  },"93": {
+  },"89": {
     "doc": "Kafka In",
     "title": "Kafka In",
     "content": "LDIO Component Name: Ldio:LdioKafkaIn see reference guide Apache Nifi Component Name: ConsumeKafka see Apache Nifi reference guide . The LDIO Kafka In component is vital to the Publishing Pipeline, specifically designed to interact with Kafka, a distributed event streaming platform. This component is responsible for listening to messages from a specified kafka topic, which is crucial in integrating with an LDES server. graph LR L[Kafka topic] --&gt; H[Kafka in component] H --&gt; S[LDES server] subgraph Publishing Pipeline H end . ",
     "url": "/publisher/inputs/kafka-in",
     
     "relUrl": "/publisher/inputs/kafka-in"
-  },"94": {
-    "doc": "Azure Blob Out",
-    "title": "LDIO Azure Blob Out",
-    "content": "LDIO Component Name: Ldio:AzureBlobOut see reference guide Apache Nifi Component Name: PutAzureBlobStorage see Apache Nifi reference guide . The LDIO Azure Blob Out writes out messages to an Azure Blob Container. Messages can be written in any format supported by Apache Jena or in JSON format. {.warning} For the json format it is necessary to have a URI which holds the context. graph LR LDES --&gt; C[Client] C --&gt; H[LDIO Azure Blob Out Component] H --&gt; S[Azure Blob Container] subgraph Publishing Pipeline C H end . ",
-    "url": "/publisher/outputs/azure-blob-out#ldio-azure-blob-out",
-    
-    "relUrl": "/publisher/outputs/azure-blob-out#ldio-azure-blob-out"
-  },"95": {
-    "doc": "Azure Blob Out",
-    "title": "Azure Blob Out",
-    "content": " ",
-    "url": "/publisher/outputs/azure-blob-out",
-    
-    "relUrl": "/publisher/outputs/azure-blob-out"
-  },"96": {
-    "doc": "Console Out",
-    "title": "LDIO Console Out",
-    "content": "LDIO Component Name: Ldio:AzureBlobOut see reference guide Apache Nifi Component Name: LogMessage see Apache Nifi reference guide . The LDIO Console Out will output its given model to the console. In Apache Nifi, LogMessage processor, will emit a log message at the specified log level. ",
-    "url": "/publisher/outputs/console-out#ldio-console-out",
-    
-    "relUrl": "/publisher/outputs/console-out#ldio-console-out"
-  },"97": {
-    "doc": "Console Out",
-    "title": "Console Out",
-    "content": " ",
-    "url": "/publisher/outputs/console-out",
-    
-    "relUrl": "/publisher/outputs/console-out"
-  },"98": {
-    "doc": "File archiving",
-    "title": "Archive File Out",
-    "content": "LDIO Component Name: Ldio:LdioArchiveFileOut see reference guide Apache Nifi Component Name: ArchiveFileOut see Apache Nifi reference guide . The Archive File Out is used to write models to files based on a timestamp path property on the model. Every file is written to NQuads with the extracted timestamp as name: 2023-11-21-05-05-00-000000000.nq When two files have the same name, a sequence nr is added, for example: 2023-11-21-05-05-00-000000000-2.nq . The files are ordered in directories based on the date. For every day, there is one directory. For example: 2023-11-21-05-05-00-000000000.nq will be located at archive-root-dir/2023/11/21. ",
-    "url": "/publisher/outputs/file-archiving#archive-file-out",
-    
-    "relUrl": "/publisher/outputs/file-archiving#archive-file-out"
-  },"99": {
-    "doc": "File archiving",
-    "title": "File archiving",
-    "content": " ",
-    "url": "/publisher/outputs/file-archiving",
-    
-    "relUrl": "/publisher/outputs/file-archiving"
-  },"100": {
+  },"90": {
     "doc": "HTTP Out",
     "title": "LDIO HTTP Out",
     "content": "LDIO Component Name: Ldio:HttpOut see reference guide Apache Nifi Component Name: InvokeHTTP see Apache Nifi reference guide . The LDIO HTTP Out is a basic Http Client that will send the given Linked Data model to a target url. This pipeline component is responsible for sending harvested LDES members to an external destination (url) using the HTTP (Hypertext Transfer Protocol). HTTP is the foundational protocol used for transmitting data over the internet, primarily used for loading web pages in a browser, but it’s also widely utilized in various other types of network communication. graph LR LDES --&gt; C[Client] C --&gt; H[LDIO HTTP out] H --&gt; S[url] subgraph Publishing Pipeline C H end . ",
     "url": "/publisher/outputs/http-out#ldio-http-out",
     
     "relUrl": "/publisher/outputs/http-out#ldio-http-out"
-  },"101": {
+  },"91": {
     "doc": "HTTP Out",
     "title": "HTTP Out",
     "content": " ",
     "url": "/publisher/outputs/http-out",
     
     "relUrl": "/publisher/outputs/http-out"
-  },"102": {
+  },"92": {
     "doc": "4. Output components",
     "title": "Output components",
     "content": "The Output components are components that will take in Linked Data and will export it to external sources. ",
     "url": "/publisher/outputs/index#output-components",
     
     "relUrl": "/publisher/outputs/index#output-components"
-  },"103": {
+  },"93": {
     "doc": "4. Output components",
     "title": "4. Output components",
     "content": " ",
     "url": "/publisher/outputs/index",
     
     "relUrl": "/publisher/outputs/index"
-  },"104": {
-    "doc": "Kafka Out",
-    "title": "Kafka Out",
-    "content": "LDIO Component Name: Ldio:LdioKafkaIn see reference guide Apache Nifi Component Name: ConsumeKafka see Apache Nifi reference guide . The Kafka Out sends messages to a kafka topic. graph LR LDES --&gt; C[Client] C --&gt; H[LDIO Kafka Out Component] H --&gt; S[Kafka topic] subgraph Publishing Pipeline C H end . ",
-    "url": "/publisher/outputs/kafka-out",
-    
-    "relUrl": "/publisher/outputs/kafka-out"
-  },"105": {
-    "doc": "Repository Materialization",
-    "title": "Repository Materialiser",
-    "content": "LDIO Component Name: Ldio:RepositoryMaterialiser see reference guide Apache Nifi Component Name: RepositoryMaterialiser see reference guide . The repository materialiser is used to materialise an LDES stream into a triplestore. Any triplestore that supports the RDF4J remote repository API can be used. graph LR L[LDES members] --&gt; H[Repository Materialiser] H --&gt; S[Tripple Store] subgraph Publishing Pipeline H end . Batching . To increase the performance of this materialiser, members will be committed in batch to the triple store. However, it’s important to notice that this can have an impact on the data integrity. First of all, there could be a delay, with a maximum delay of the configured batch timeout, when the triple store will be up-to-date. Secondly, if something goes wrong halfway of a batch, all the members in that batch will not be committed to triple story and thus will be gone. So the more important data integrity is, the lower the batch-size and batch-timeout should be configured. If a more performant repository materialiser is desired, batch-size and batch-timeout should be configured somewhat higher. ",
-    "url": "/publisher/outputs/repository-materialiser#repository-materialiser",
-    
-    "relUrl": "/publisher/outputs/repository-materialiser#repository-materialiser"
-  },"106": {
-    "doc": "Repository Materialization",
-    "title": "Repository Materialization",
-    "content": " ",
-    "url": "/publisher/outputs/repository-materialiser",
-    
-    "relUrl": "/publisher/outputs/repository-materialiser"
-  },"107": {
+  },"94": {
     "doc": "GeoJson to Wkt Transformer",
     "title": "GeoJson to Wkt Transformer",
     "content": "LDIO Component Name: Ldio:GeoJsonToWktTransformer see reference guide Apache Nifi Component Name: GeoJson-to-Wkt-Transformer see Apache Nifi reference guide . The GeoJson to Wkt Transformer will transform any [GeoJson] statements (with predicate https://purl.org/geojson/vocab#geometry) to a [wkt string][WKT]. graph LR L[GeoJson] --&gt; H[GeoJson To WKT Transformer] H --&gt; S[WKT] subgraph Publishing Pipeline H end . ",
     "url": "/publisher/transformers/geojson-to-wkt",
     
     "relUrl": "/publisher/transformers/geojson-to-wkt"
-  },"108": {
+  },"95": {
     "doc": "Http Enricher Transformer",
     "title": "Http Enricher",
     "content": "LDIO Component Name: Ldio:HttpEnricher see reference guide Apache Nifi Component Name: ... see reference guide . A transformer that allows sending a GET or POST HTTP request to a dynamic URL provided by the model. The response is converted to linked data and added to the incoming model. graph LR L[GET/POST] --&gt; H[Http Enricher] H --&gt; S[Linked Data response] subgraph Publishing Pipeline H end . ",
     "url": "/publisher/transformers/http-enricher#http-enricher",
     
     "relUrl": "/publisher/transformers/http-enricher#http-enricher"
-  },"109": {
+  },"96": {
     "doc": "Http Enricher Transformer",
     "title": "Http Enricher Transformer",
     "content": " ",
     "url": "/publisher/transformers/http-enricher",
     
     "relUrl": "/publisher/transformers/http-enricher"
-  },"110": {
+  },"97": {
     "doc": "3. Transformer components",
     "title": "Transformer components",
     "content": "The Transformer components are components that takes in a Linked Data model, transform/modify it and then put it back on the publishing pipeline. ",
     "url": "/publisher/transformers/index#transformer-components",
     
     "relUrl": "/publisher/transformers/index#transformer-components"
-  },"111": {
+  },"98": {
     "doc": "3. Transformer components",
     "title": "3. Transformer components",
     "content": " ",
     "url": "/publisher/transformers/index",
     
     "relUrl": "/publisher/transformers/index"
-  },"112": {
+  },"99": {
     "doc": "SPARQL Construct",
     "title": "SPARQL Construct",
     "content": "LDIO Component Name: Ldio:SparqlConstructTransformer see reference guide Apache Nifi Component Name: SPARQL Interactions Processors see reference guide . The SPARQL Construct Transformer will modify the model based on the given SPARQL Construct Query. SPARQL Construct is a query language used in semantic Web technologies to create RDF (Resource Description Framework) graphs from existing RDF data. It allows users to specify a pattern of data they wish to extract from the RDF data and construct a new graph based on that pattern. The SPARQL Construct query language provides a powerful way to create new RDF data by using existing data as the input. It can be used to transform RDF data into different formats, as well as to simplify the structure of RDF data by aggregating or filtering data. This SPARQL Construct Transfomer building block can be used to execute model transformations. ",
     "url": "/publisher/transformers/sparql-construct",
     
     "relUrl": "/publisher/transformers/sparql-construct"
-  },"113": {
+  },"100": {
     "doc": "SPARQL Construct",
     "title": "Splitting models using SPARQL Construct",
     "content": "This component can be used to split models into multiple models using graphs. For example, the below query will create a dataset containing multiple models defined by ‘GRAPH’. The SPARQL construct component will extract all named models from the dataset and add all statements from the default model. The component will then return a collection of models. CONSTRUCT { GRAPH ?s { ?s ?p ?o } } WHERE { ?s ?p ?o } . ",
     "url": "/publisher/transformers/sparql-construct#splitting-models-using-sparql-construct",
     
     "relUrl": "/publisher/transformers/sparql-construct#splitting-models-using-sparql-construct"
-  },"114": {
+  },"101": {
     "doc": "SPARQL Construct",
     "title": "SPARQL functions",
     "content": "We support some additional geo functions that can call inside your SPARQL Construct query, . with the following namespace: . prefix geoc: https://opengis.net/def/function/geosparql/custom# . | Function | Description | Input | Output | . | geoc:lineAtIndex | get LineString from MultiLineString by index. | MultiLineString(wktLiteral) &amp; index | LineString(wktLiteral) | . | geoc:firstCoordinate | get first Coordinate of LineString. | LineString(wktLiteral) | Coordinate(wktLiteral) | . | geoc:lastCoordinate | get last Coordinate of LineString. | LineString(wktLiteral) | Coordinate(wktLiteral) | . | geoc:lineLength | calculate total line length of LineString. | LineString(wktLiteral) | distance in meters | . | geoc:midPoint | calculate midpoint of LineString. | LineString(wktLiteral) | Coordinate(wktLiteral) | . | geoc:pointAtFromStart | calculate point on LineString by distance. | LineString(wktLiteral) &amp; distance in meters | Coordinate(wktLiteral) | . |   |   |   |   | . ",
     "url": "/publisher/transformers/sparql-construct#sparql-functions",
     
     "relUrl": "/publisher/transformers/sparql-construct#sparql-functions"
-  },"115": {
+  },"102": {
     "doc": "Version Materializer",
     "title": "Version Materializer",
     "content": "LDIO Component Name: Ldio:VersionMaterialiser see reference guide Apache Nifi Component Name: VersionMaterialiser see reference guide . The Version Materializer will transform a Version Object to a State Object. ",
     "url": "/publisher/transformers/version-materializer",
     
     "relUrl": "/publisher/transformers/version-materializer"
-  },"116": {
+  },"103": {
     "doc": "Version Object Creator",
     "title": "Version Object Creator",
     "content": "LDIO Component Name: Ldio:VersionObjectCreator see reference guide Apache Nifi Component Name: VersionObjectCreator see reference guide . The Version Object Creator will transform a State Object to a Version Object. ",
     "url": "/publisher/transformers/version-object-creator",
     
     "relUrl": "/publisher/transformers/version-object-creator"
-  },"117": {
+  },"104": {
     "doc": "2. Adapter components",
     "title": "Adapters components",
     "content": "The Adapter components are components to be used in conjunction with the LDI Input, the LDI Adapter will transform the provided content into and internal Linked Data model and sends it down the pipeline. ",
     "url": "/consumer/adapters/index#adapters-components",
     
     "relUrl": "/consumer/adapters/index#adapters-components"
-  },"118": {
+  },"105": {
     "doc": "2. Adapter components",
     "title": "2. Adapter components",
     "content": " ",
     "url": "/consumer/adapters/index",
     
     "relUrl": "/consumer/adapters/index"
-  },"119": {
+  },"106": {
     "doc": "RDF Adapter",
     "title": "RDF Adapter",
     "content": "LDIO Component Name: Ldio:RdfAdapter see reference guide Apache Nifi Component Name: RDF serialisation Processor see reference guide . As the most basic Adapter of the LDI Core Building Blocks, the RDF Adapter will take in an RDF string and convert it into an internal Linked Data model. ",
     "url": "/consumer/adapters/rdf-adapter",
     
     "relUrl": "/consumer/adapters/rdf-adapter"
-  },"120": {
+  },"107": {
     "doc": "RDF Adapter",
     "title": "Notes",
     "content": "This Adapter only supports valid RDF mime types . An LDIO wrapper component for the LDI RDF Adapter building block . graph LR L[...] --&gt; H[RDF writer] H --&gt; S[correct RDF] subgraph LD Pipeline H end . ",
     "url": "/consumer/adapters/rdf-adapter#notes",
     
     "relUrl": "/consumer/adapters/rdf-adapter#notes"
-  },"121": {
+  },"108": {
     "doc": "Examples consuming Pipeline",
     "title": "Examples consuming pipelines",
     "content": "This sections provides an overview of how data consumer can replicate data to different backend systems. ",
     "url": "/consumer/examples#examples-consuming-pipelines",
     
     "relUrl": "/consumer/examples#examples-consuming-pipelines"
-  },"122": {
+  },"109": {
     "doc": "Examples consuming Pipeline",
     "title": "Triple stores",
     "content": ". A vivid illustration of a consumption pipeline involves the process of harvesting members from a Linked Data Event Stream (LDES) and subsequently storing them in a triplestore. Once stored, these data points can be efficiently queried and analyzed using SPARQL queries. This pipeline not only showcases the seamless integration of data into a structured repository but also highlights the ease with which users can access and manipulate this information, thereby unlocking a wealth of insights and opportunities for exploration. You can find more information in this article . ",
     "url": "/consumer/examples#triple-stores",
     
     "relUrl": "/consumer/examples#triple-stores"
-  },"123": {
+  },"110": {
     "doc": "Examples consuming Pipeline",
     "title": "PostgreSQL &amp; TimescaleDB",
     "content": ". You can find more information in this article . ",
     "url": "/consumer/examples#postgresql--timescaledb",
     
     "relUrl": "/consumer/examples#postgresql--timescaledb"
-  },"124": {
+  },"111": {
     "doc": "Examples consuming Pipeline",
     "title": "PowerBI",
     "content": ". You can find more information in this article . ",
     "url": "/consumer/examples#powerbi",
     
     "relUrl": "/consumer/examples#powerbi"
-  },"125": {
+  },"112": {
     "doc": "Examples consuming Pipeline",
     "title": "GeoServer",
     "content": ". You can find more information in this article . ",
     "url": "/consumer/examples#geoserver",
     
     "relUrl": "/consumer/examples#geoserver"
-  },"126": {
+  },"113": {
     "doc": "Examples consuming Pipeline",
     "title": "LDES to QGIS",
     "content": ". You can find more information in this article . ",
     "url": "/consumer/examples#ldes-to-qgis",
     
     "relUrl": "/consumer/examples#ldes-to-qgis"
-  },"127": {
+  },"114": {
     "doc": "Examples consuming Pipeline",
     "title": "Machine Learning (ML-LDES server)",
     "content": ". You can find more information in this and this article . git config –global core.autocrlf false . ",
     "url": "/consumer/examples#machine-learning-ml-ldes-server",
     
     "relUrl": "/consumer/examples#machine-learning-ml-ldes-server"
-  },"128": {
+  },"115": {
     "doc": "Examples consuming Pipeline",
     "title": "Examples consuming Pipeline",
     "content": " ",
     "url": "/consumer/examples",
     
     "relUrl": "/consumer/examples"
-  },"129": {
+  },"116": {
     "doc": "Consuming pipeline",
     "title": "Consuming Pipeline",
     "content": ". As a data consumer, you want to access and utilize data from the Flanders Smart Data Space. This data is offered in the form of Linked Data Event Streams. This section aims to guide you through the process of creating the perfect consumption pipeline, providing a broad overview without delving into the complexities of each pipeline component. Armed with this foundational knowledge, you can seamlessly transition to the tutorials, ready to apply the essential concepts and background information to your data consumption tasks. ",
     "url": "/consumer/index#consuming-pipeline",
     
     "relUrl": "/consumer/index#consuming-pipeline"
-  },"130": {
+  },"117": {
     "doc": "Consuming pipeline",
     "title": "Consuming pipeline",
     "content": " ",
     "url": "/consumer/index",
     
     "relUrl": "/consumer/index"
-  },"131": {
+  },"118": {
     "doc": "1. Input components",
     "title": "Input components",
     "content": "The input components are components that will receive data (not necessarily) to then feed the LDI pipeline. ",
     "url": "/consumer/inputs/index#input-components",
     
     "relUrl": "/consumer/inputs/index#input-components"
-  },"132": {
+  },"119": {
     "doc": "1. Input components",
     "title": "1. Input components",
     "content": " ",
     "url": "/consumer/inputs/index",
     
     "relUrl": "/consumer/inputs/index"
-  },"133": {
+  },"120": {
     "doc": "LDES Client with Connector",
     "title": "LDIO Ldes Client Connector",
     "content": "LDIO connector name: Ldio:LdioLdesClientConnector see reference guide Apache Nifi Component Name: Ldio:LdioLdesClientConnector` see reference guide . This component adds EDC (Eclipse dataspace Connector) support to the ldio ldes client. If you’d like to know how to configure the LDES Client, we refer to the ldio ldes client. The additional functionality provided by this component makes it possible to use the Ldes Client to consume an LDES through an EDC connector. This component exposes two endpoints: . | http://://transfer The Ldio component will start the data transfer with the connector. You have to send the transfer request to the LdioLdesClientConnector instead of the EDC consumer connector. The LDIO Ldes Client Connector will start the transfer with the connector and also keep the transfer alive while consuming the LDES (e.g. request a new token when it expires). | http://://token This endpoint should never be called directly. This is the callback to be provided in the transfer request. The EDC connector will use this callback endpoint to provide the LDES Client with a token. | . ",
     "url": "/consumer/inputs/ldes-client-connector#ldio-ldes-client-connector",
     
     "relUrl": "/consumer/inputs/ldes-client-connector#ldio-ldes-client-connector"
-  },"134": {
+  },"121": {
     "doc": "LDES Client with Connector",
     "title": "LDES Client with Connector",
     "content": " ",
     "url": "/consumer/inputs/ldes-client-connector",
     
     "relUrl": "/consumer/inputs/ldes-client-connector"
-  },"135": {
+  },"122": {
     "doc": "LDES Client",
     "title": "LDES Client",
     "content": "LDIO Component Name: Ldio:LdioLdesClient see reference guide Apache Nifi Component Name: Ldio:LdioLdesClient see reference guide . The LDES Client stands as a critical component of the pipeline, arguably the most pivotal. The LDES Client is responsible for consuming members from an existing LDES, subsequently facilitating their smooth progression through the LDIO. The LDES Client contains the functionality to replicate and synchronize an LDES, and to persist its state for that process. More information on the functionalites can be found here. This is achieved by configuring the processor with an initial fragment URL. When the processor is triggered, the fragment will be processed, and all relations will be added to the (non-persisted) queue.A queue that accepts new fragments to process is maintained as long as the processor runs. The processor also keeps track of the mutable and immutable fragments already processed. It will be ignored when an attempt is made to queue a known immutable fragment. Fragments in the mutable fragment store will be queued when they’re expired. Should a fragment be processed from a stream that does not set the max-age in the Cache-control header, a default expiration interval will be used to set an expiration date on the fragment. Processed members of mutable fragments are also kept in state. They are ignored if presented more than once. Within a fragment, members can be ordered based on a timestamp. The path to this timestamp has to be configured. If this path is missing, the members are ordered randomly. graph LR L[LDES] --&gt; H[LDES Client] H --&gt; S[...] S --&gt; Q[...] subgraph LD input Pipeline H S end . The LDES CLIENT is designed for replication and synchronisation, meaning the client can retrieve members of an LDES but also checks regularly if new members are added and fetch them, allowing data consumers to stay up to date with the dataset. To understand the functioning of an LDES client, it is important to understand how LDESes are published on the Web. The Linked Data Fragments principle is utilised for publishing an LDES, meaning that the data is published in one or more fragments and meaningful semantic links are created between these fragments. This approach facilitates clients to follow these links and discover additional data. However, the critical aspect for the LDES client is the notion of mutable and immutable fragments. When publishing an LDES stream, a common configuration is to have a maximum number of members per fragment. Once a fragment surpasses this limit, it is regarded as immutable, and a ‘Cache-control: immutable’ cache header is added to the fragment to signify this. This information is crucial for the LDES client since it only needs to retrieve an immutable fragment once, while mutable fragments must be regularly polled to identify new members. ",
     "url": "/consumer/inputs/ldes-client",
     
     "relUrl": "/consumer/inputs/ldes-client"
-  },"136": {
+  },"123": {
     "doc": "LDES Client",
     "title": "Linked Data Interactions",
     "content": "The LDES client component is written in Java and available as an SDK in the Linked Data Interactions repository. More information about Linked Data Interactions can be found here. The LDES Client contains the functionality to replicate and synchornise an LDES, and to persist its state for that process. More information on the functionalites can be found here. This is achieved by configuring the processor with an initial fragment URL. When the processor is triggered, the fragment will be processed, and all relations will be added to the (non-persisted) queue. As long as the processor runs, a queue that accepts new fragments to process is maintained. The processor also keeps track of the mutable and immutable fragments already processed. It will be ignored when an attempt is made to queue a known immutable fragment. Fragments in the mutable fragment store will be queued when they’re expired. Should a fragment be processed from a stream that does not set the max-age in the Cache-control header, a default expiration interval will be used to set an expiration date on the fragment. Processed members of mutable fragments are also kept in state. They are ignored if presented more than once. Within a fragment, members can be ordered based on a timestamp. The path to this timestamp has to be configured. If this path is missing, the members are ordered randomly. ",
     "url": "/consumer/inputs/ldes-client#linked-data-interactions",
     
     "relUrl": "/consumer/inputs/ldes-client#linked-data-interactions"
-  },"137": {
+  },"124": {
     "doc": "5. LDES structure Discoverer",
     "title": "LDES structure Discoverer",
     "content": "A lightweight application that discovers the structure of an LDES or a view by retrieving all the tree node relations of that LDES or view. A use case for this could be when you are only interested in a part of the event stream. To know what part you can follow, the structure can be discovered first. ",
     "url": "/consumer/ldes-discoverer#ldes-structure-discoverer",
     
     "relUrl": "/consumer/ldes-discoverer#ldes-structure-discoverer"
-  },"138": {
+  },"125": {
     "doc": "5. LDES structure Discoverer",
     "title": "Config",
     "content": "| Property | Description | Required | Default | Example | Supported values | . | url | Url where from the discoverer needs to start | Yes | N/A | http://example.com/my-api | HTTP and HTTPS url | . | source-format | The ‘Content-Type’ that should be requested to the server. | No | application/n-quads | text/turtle | Any type supported by Apache Jena | . | output-format | The RDF format that will be used to display all the found relations | No | text/turtle | application/ld+json | Any type supported by Apache Jena | . ",
     "url": "/consumer/ldes-discoverer#config",
     
     "relUrl": "/consumer/ldes-discoverer#config"
-  },"139": {
+  },"126": {
     "doc": "5. LDES structure Discoverer",
     "title": "How to run",
     "content": "This tutorial will show how to use the discoverer in Docker. In this example, we will try to discover the structure of an event stream of Geomobility. For simplicity, we recommend passing the config as arguments, like shown below: . docker run ldes/ldes-discoverer --url=\"http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11\" . NOTE: when an url contains a &amp; symbol, which will be picked up by the shell as an operator. In this example, if the url was not wrapped in quotation marks, the shell will try to execute three different command, where the last two will be month=05 and day=11, which will fail of course. To resolve this, make sure the url is encapsulated in quotation marks. Example output . In the logging of the application, both the total number of relations and the relations itself will be displayed. This will be present as the last logging statement of the app and would look something like this: . 2024-02-08T14:26:25.279+01:00 INFO 48176 --- [ main] b.v.i.l.l.d.common.LdesDiscoverer : Total of 97 relations found for url http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11 @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt; . &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=3&gt; tree:relation [ rdf:type tree:Relation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=4&gt; ] . &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=2&gt; tree:relation [ rdf:type tree:Relation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=3&gt; ] . &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&gt; tree:relation [ rdf:type tree:InBetweenRelation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=00&gt;; tree:path prov:generatedAtTime; tree:value \"2023-05-11T00\" ]; tree:relation [ rdf:type tree:InBetweenRelation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&gt;; tree:path prov:generatedAtTime; tree:value \"2023-05-11T05\" ]; [...] tree:relation [ rdf:type tree:InBetweenRelation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=20&gt;; tree:path prov:generatedAtTime; tree:value \"2023-05-11T20\" ] . [...] &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&gt; tree:relation [ rdf:type tree:Relation; tree:node &lt;http://ldes-server/observations/by-time?year=2023&amp;month=05&amp;day=11&amp;hour=05&amp;pageNumber=1&gt; ] . ",
     "url": "/consumer/ldes-discoverer#how-to-run",
     
     "relUrl": "/consumer/ldes-discoverer#how-to-run"
-  },"140": {
+  },"127": {
     "doc": "5. LDES structure Discoverer",
     "title": "5. LDES structure Discoverer",
     "content": " ",
     "url": "/consumer/ldes-discoverer",
     
     "relUrl": "/consumer/ldes-discoverer"
-  },"141": {
+  },"128": {
+    "doc": "Azure Blob Out",
+    "title": "LDIO Azure Blob Out",
+    "content": "LDIO Component Name: Ldio:AzureBlobOut see reference guide Apache Nifi Component Name: PutAzureBlobStorage see Apache Nifi reference guide . The LDIO Azure Blob Out writes out messages to an Azure Blob Container. Messages can be written in any format supported by Apache Jena or in JSON format. {.warning} For the json format it is necessary to have a URI which holds the context. graph LR LDES --&gt; C[Client] C --&gt; H[LDIO Azure Blob Out Component] H --&gt; S[Azure Blob Container] subgraph Publishing Pipeline C H end . ",
+    "url": "/consumer/outputs/azure-blob-out#ldio-azure-blob-out",
+    
+    "relUrl": "/consumer/outputs/azure-blob-out#ldio-azure-blob-out"
+  },"129": {
+    "doc": "Azure Blob Out",
+    "title": "Azure Blob Out",
+    "content": " ",
+    "url": "/consumer/outputs/azure-blob-out",
+    
+    "relUrl": "/consumer/outputs/azure-blob-out"
+  },"130": {
+    "doc": "Console Out",
+    "title": "LDIO Console Out",
+    "content": "LDIO Component Name: Ldio:AzureBlobOut see reference guide Apache Nifi Component Name: LogMessage see Apache Nifi reference guide . The LDIO Console Out will output its given model to the console. In Apache Nifi, LogMessage processor, will emit a log message at the specified log level. ",
+    "url": "/consumer/outputs/console-out#ldio-console-out",
+    
+    "relUrl": "/consumer/outputs/console-out#ldio-console-out"
+  },"131": {
+    "doc": "Console Out",
+    "title": "Console Out",
+    "content": " ",
+    "url": "/consumer/outputs/console-out",
+    
+    "relUrl": "/consumer/outputs/console-out"
+  },"132": {
+    "doc": "HTTP Out",
+    "title": "LDIO HTTP Out",
+    "content": "LDIO Component Name: Ldio:HttpOut see reference guide Apache Nifi Component Name: InvokeHTTP see Apache Nifi reference guide . The LDIO HTTP Out is a basic Http Client that will send the given Linked Data model to a target url. This pipeline component is responsible for sending harvested LDES members to an external destination (url) using the HTTP (Hypertext Transfer Protocol). HTTP is the foundational protocol used for transmitting data over the internet, primarily used for loading web pages in a browser, but it’s also widely utilized in various other types of network communication. graph LR LDES --&gt; C[Client] C --&gt; H[LDIO HTTP out] H --&gt; S[url] subgraph Publishing Pipeline C H end . ",
+    "url": "/consumer/outputs/http-out#ldio-http-out",
+    
+    "relUrl": "/consumer/outputs/http-out#ldio-http-out"
+  },"133": {
+    "doc": "HTTP Out",
+    "title": "HTTP Out",
+    "content": " ",
+    "url": "/consumer/outputs/http-out",
+    
+    "relUrl": "/consumer/outputs/http-out"
+  },"134": {
+    "doc": "4. Output components",
+    "title": "Output components",
+    "content": "The Output components are components that will take in Linked Data and will export it to external sources. ",
+    "url": "/consumer/outputs/index%20copy#output-components",
+    
+    "relUrl": "/consumer/outputs/index%20copy#output-components"
+  },"135": {
+    "doc": "4. Output components",
+    "title": "4. Output components",
+    "content": " ",
+    "url": "/consumer/outputs/index%20copy",
+    
+    "relUrl": "/consumer/outputs/index%20copy"
+  },"136": {
     "doc": "4. Output components",
     "title": "Linked Data Interactions Outputs",
     "content": "The LDI Output is a component that will take in Linked Data and will export it to external sources. ",
     "url": "/consumer/outputs/index#linked-data-interactions-outputs",
     
     "relUrl": "/consumer/outputs/index#linked-data-interactions-outputs"
-  },"142": {
+  },"137": {
     "doc": "4. Output components",
     "title": "4. Output components",
     "content": " ",
     "url": "/consumer/outputs/index",
     
     "relUrl": "/consumer/outputs/index"
-  },"143": {
+  },"138": {
+    "doc": "Kafka Out",
+    "title": "Kafka Out",
+    "content": "LDIO Component Name: Ldio:LdioKafkaIn see reference guide Apache Nifi Component Name: ConsumeKafka see Apache Nifi reference guide . The Kafka Out sends messages to a kafka topic. graph LR LDES --&gt; C[Client] C --&gt; H[LDIO Kafka Out Component] H --&gt; S[Kafka topic] subgraph Publishing Pipeline C H end . ",
+    "url": "/consumer/outputs/kafka-out",
+    
+    "relUrl": "/consumer/outputs/kafka-out"
+  },"139": {
+    "doc": "Repository Materialization",
+    "title": "Repository Materialiser",
+    "content": "LDIO Component Name: Ldio:RepositoryMaterialiser see reference guide Apache Nifi Component Name: RepositoryMaterialiser see reference guide . The repository materialiser is used to materialise an LDES stream into a triplestore. Any triplestore that supports the RDF4J remote repository API can be used. graph LR L[LDES members] --&gt; H[Repository Materialiser] H --&gt; S[Tripple Store] subgraph Publishing Pipeline H end . Batching . To increase the performance of this materialiser, members will be committed in batch to the triple store. However, it’s important to notice that this can have an impact on the data integrity. First of all, there could be a delay, with a maximum delay of the configured batch timeout, when the triple store will be up-to-date. Secondly, if something goes wrong halfway of a batch, all the members in that batch will not be committed to triple story and thus will be gone. So the more important data integrity is, the lower the batch-size and batch-timeout should be configured. If a more performant repository materialiser is desired, batch-size and batch-timeout should be configured somewhat higher. ",
+    "url": "/consumer/outputs/repository-materialiser#repository-materialiser",
+    
+    "relUrl": "/consumer/outputs/repository-materialiser#repository-materialiser"
+  },"140": {
+    "doc": "Repository Materialization",
+    "title": "Repository Materialization",
+    "content": " ",
+    "url": "/consumer/outputs/repository-materialiser",
+    
+    "relUrl": "/consumer/outputs/repository-materialiser"
+  },"141": {
     "doc": "3. Transformer components",
     "title": "Linked Data Interactions Transformers",
     "content": "The LDI Transformer is a component that takes in a Linked Data model, transforms/modifies it and then puts it back on the pipeline. ",
     "url": "/consumer/transformers/index#linked-data-interactions-transformers",
     
     "relUrl": "/consumer/transformers/index#linked-data-interactions-transformers"
-  },"144": {
+  },"142": {
     "doc": "3. Transformer components",
     "title": "3. Transformer components",
     "content": " ",
     "url": "/consumer/transformers/index",
     
     "relUrl": "/consumer/transformers/index"
+  },"143": {
+    "doc": "SPARQL Construct",
+    "title": "SPARQL Construct",
+    "content": "LDIO Component Name: Ldio:SparqlConstructTransformer see reference guide Apache Nifi Component Name: SPARQL Interactions Processors see reference guide . The SPARQL Construct Transformer will modify the model based on the given SPARQL Construct Query. SPARQL Construct is a query language used in semantic Web technologies to create RDF (Resource Description Framework) graphs from existing RDF data. It allows users to specify a pattern of data they wish to extract from the RDF data and construct a new graph based on that pattern. The SPARQL Construct query language provides a powerful way to create new RDF data by using existing data as the input. It can be used to transform RDF data into different formats, as well as to simplify the structure of RDF data by aggregating or filtering data. This SPARQL Construct Transfomer building block can be used to execute model transformations. ",
+    "url": "/consumer/transformers/sparql-construct",
+    
+    "relUrl": "/consumer/transformers/sparql-construct"
+  },"144": {
+    "doc": "SPARQL Construct",
+    "title": "Splitting models using SPARQL Construct",
+    "content": "This component can be used to split models into multiple models using graphs. For example, the below query will create a dataset containing multiple models defined by ‘GRAPH’. The SPARQL construct component will extract all named models from the dataset and add all statements from the default model. The component will then return a collection of models. CONSTRUCT { GRAPH ?s { ?s ?p ?o } } WHERE { ?s ?p ?o } . ",
+    "url": "/consumer/transformers/sparql-construct#splitting-models-using-sparql-construct",
+    
+    "relUrl": "/consumer/transformers/sparql-construct#splitting-models-using-sparql-construct"
   },"145": {
+    "doc": "SPARQL Construct",
+    "title": "SPARQL functions",
+    "content": "We support some additional geo functions that can call inside your SPARQL Construct query, . with the following namespace: . prefix geoc: https://opengis.net/def/function/geosparql/custom# . | Function | Description | Input | Output | . | geoc:lineAtIndex | get LineString from MultiLineString by index. | MultiLineString(wktLiteral) &amp; index | LineString(wktLiteral) | . | geoc:firstCoordinate | get first Coordinate of LineString. | LineString(wktLiteral) | Coordinate(wktLiteral) | . | geoc:lastCoordinate | get last Coordinate of LineString. | LineString(wktLiteral) | Coordinate(wktLiteral) | . | geoc:lineLength | calculate total line length of LineString. | LineString(wktLiteral) | distance in meters | . | geoc:midPoint | calculate midpoint of LineString. | LineString(wktLiteral) | Coordinate(wktLiteral) | . | geoc:pointAtFromStart | calculate point on LineString by distance. | LineString(wktLiteral) &amp; distance in meters | Coordinate(wktLiteral) | . |   |   |   |   | . ",
+    "url": "/consumer/transformers/sparql-construct#sparql-functions",
+    
+    "relUrl": "/consumer/transformers/sparql-construct#sparql-functions"
+  },"146": {
     "doc": "Intermediary Pipeline",
     "title": "Intermediary Pipeline",
     "content": ". A data intermediary, particularly one specialized in working with Linked Data Event Streams (LDES), plays a pivotal role in the data space ecosystem. These intermediaries act as the connective tissue between data publishers and consumers, focusing on the acquisition, enhancement, and redistribution of data streams. Their work with LDES involves not just the simple relaying of data from one point to another but adding substantial value to the data. This can include cleaning and restructuring data, enriching it with additional context or information from other sources, and ensuring the data is modeled and published in a way that adheres to Linked Data principles. This ensures that the data is not only more useful and insightful for end-users but also interoperable within the broader web of data. The ultimate goal of a data intermediary working with LDES is to facilitate a seamless, efficient, and enriching flow of data across different sectors and users. By doing so, they help unlock the full potential of Linked Data for businesses, researchers, and public entities, making data more accessible, understandable, and actionable. As a data intermediary, your objective is to collect LDES streams and then release a revamped, enriched LDES data stream. The capability to utilize data processing techniques for cleaning, restructuring, or augmenting the initial datasets requires the establishment of a specialized LDES consumption pipeline. Your role involves implementing a resilient and scalable pipeline that not only facilitates an uninterrupted data flow but also aligns with Linked Data principles, thereby transforming your enhanced LDES stream into a crucial resource within the data ecosystem. ",

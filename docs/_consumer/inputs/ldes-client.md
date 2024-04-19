@@ -7,7 +7,7 @@ nav_order: 0
 
 # LDES Client
 
-<b>LDIO Component Name:</b> <i>`Ldio:LdioLdesClient`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:LdioLdesClient`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-ldes-client) <br>
 <b>Apache Nifi Component Name:</b> <i>`Ldio:LdioLdesClient`</i> see [reference guide]()
 
 <br>
